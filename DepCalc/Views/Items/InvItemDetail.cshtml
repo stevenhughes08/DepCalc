@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "InvItemDetail";
+}
+
+<h2>InvItemDetail</h2>
+
+@model DepCalc.Models.InvItemViewModel
+@{
+    ViewBag.Title = "Person Detail";
+}
+
+<h2>@Model.InvItemDetail</h2>
+
+<div class="row">
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.InvItemName)
+        <br />@Html.DisplayFor(m => m.InvItemName)
+    </div>
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.QtyServUnit)
+        <br />@Html.DisplayFor(m => m.QtyServUnit)
+    </div>
+    <div class="col-sm-12">
+        @Html.ActionLink("Done", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+
+//this is so I know all the names
+//public int InvItemId { get; set; }
+        //public string InvItemName { get; set; }
+        //public string GenLedger { get; set; }
+        //public double QtyServUnit { get; set; }
+        //public string QtyCountUnit { get; set; }
+        //public double QtyCount { get; set; }
+        //public string PurchUnit { get; set; }
+        //public string CountUnit { get; set; }
+        //public string SellUnit { get; set; }
+        //public string CountFrequency { get; set; }
+        //public double StandCost { get; set; }
