@@ -5,9 +5,10 @@ using System.Web;
 
 namespace DepCalc.Models
 {
-    public class InvItem
+    public class InvItemViewModel
     {
-        public int InvItemId { get; set; }
+        
+        public int? InvItemId { get; set; }
         public string InvItemName { get; set; }
         public string GenLedger { get; set; }
         public double QtyServUnit { get; set; }
@@ -18,6 +19,7 @@ namespace DepCalc.Models
         public string SellUnit { get; set; }
         public string CountFrequency { get; set; }
         public double StandCost { get; set; }
+        public object ItemProdInfo => "ID: " + InvItemId + " | " + "Item Name: " +  InvItemName + " | " + QtyServUnit + " " + " per " + CountUnit + "| " + "This item is sold by " +  SellUnit + " " +  QtyServUnit +  " per " +  QtyCountUnit + " " + PurchUnit + "| " + "By Default this item is counted " + CountFrequency;
 
     }
 }
