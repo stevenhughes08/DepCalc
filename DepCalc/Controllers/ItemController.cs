@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using DepCalc.Models;
 
+
 namespace DepCalc.Controllers
 {
-    public class ItemsController : Controller
+    public class ItemController : Controller
     {
 
         public static List<InvItem> InvItems = new List<InvItem>
@@ -738,7 +739,6 @@ namespace DepCalc.Controllers
 
 
         };
-
         public ActionResult Index()
         {
             var InvItemList = new InvItemListViewModel
@@ -763,34 +763,61 @@ namespace DepCalc.Controllers
             InvItemList.TotalInvItems = InvItemList.InvItems.Count;
 
             return View(InvItemList);
+
         }
-    }
-}
-//Handles retreiving a single inventory item.  
-public ActionResult InvItemDetail(int id)
-{
-    var InvItem = InvItems.SingleOrDefault(i => i.InvItemId == id);
-    if (InvItem != null)
-    {
-        var InvItemViewModel = new InvItemViewModel
+
+        //Handles retreiving a single inventory item.  
+        public ActionResult ItemDetail(int id)
         {
-      
-            InvItemId = i.InvItemId,
-            InvItemName = i.InvItemName,
-            QtyServUnit = i.QtyServUnit,
-            QtyCount = i.QtyCount,
-            PurchUnit = i.PurchUnit,
-            SellUnit = i.SellUnit,
-            CountFrequency = i.CountFrequency,
-            GenLedger = i.GenLedger,
-            StandCost = i.StandCost
+            var invItem = InvItems.SingleOrDefault(p => p.InvItemId == id);
+            if (invItem != null)
+            {
+                var invItemViewModel = new InvItemViewModel
+                {
 
-       
-        };
+                    InvItemId = invItem.InvItemId,
+                    InvItemName = invItem.InvItemName,
+                    QtyServUnit = invItem.QtyServUnit,
+                    QtyCount = invItem.QtyCount,
+                    PurchUnit = invItem.PurchUnit,
+                    SellUnit = invItem.SellUnit,
+                    CountFrequency = invItem.CountFrequency,
+                    GenLedger = invItem.GenLedger,
+                    StandCost = invItem.StandCost
 
-        return View(InvItemnViewModel);
+
+                };
+
+                return View(invItemViewModel);
+
+                
+            }
+
+            return new HttpNotFoundResult();
+        }
+
+        public ActionResult ItemAdd()
+        {
+            var invItemViewModel = new InvItemViewModel();
+            return View("AddEditItem", invItemViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult AddItem(InvItemViewModel invItemViewModel)
+        {
+            var nextItemId = InvItems.Max(p => p.InvItemId) + 1;
+            var Item = new InvItem
+            {
+                InvItemId = nextInvItemId,
+                InvItemName = InvItemViewModel.InvItemName,
+
+            };
+            InvItems.Add(item);
+            return RedirectToAction("Index");
+        }
+
     }
 
-    return new HttpNotFoundResult();
 }
+
 

@@ -1,0 +1,23 @@
+﻿
+
+@model DepCalc.Models.InvItemViewModel
+
+    ViewBag.Title = "Person Detail";
+}
+
+<h2>@Model.ItemDetail</h2>
+
+<div class="row">
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.InvItemName)
+        <br />@Html.DisplayFor(m => m.InvItemName)
+    </div>
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.QtyServUnit)
+        <br />@Html.DisplayFor(m => m.QtyServUnit)
+    </div>
+    <div class="col-sm-12">
+        @Html.ActionLink("Done", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
