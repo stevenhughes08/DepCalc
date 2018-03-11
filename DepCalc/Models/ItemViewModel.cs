@@ -17,5 +17,8 @@ namespace DepCalc.Models
         public string SellUnit { get; set; }
         public string CountFrequency { get; set; }
         public int StandCost { get; set; }
+        public object ItemProdInfo => "ID: " + InvItemId + " | " + "Item Name: " + InvItemName + " | " + QtyServUnit + " " + " per " + CountUnit + "| " + "This item is sold by " + SellUnit + " " + QtyServUnit + " per " + QtyCountUnit + " " + PurchUnit + "| " + "By Default this item is counted " + CountFrequency;
+
     }
 }
+
