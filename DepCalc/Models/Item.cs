@@ -17,5 +17,5 @@ namespace DepCalc.Models
         public string SellUnit { get; set; }
         public string CountFrequency { get; set; }
         public int StandCost { get; set; }
-
+    }
 }
