@@ -741,10 +741,15 @@ namespace DepCalc.Controllers
                     new ItemViewModel { InvItemId = 774, InvItemName = "Drink Shots ", GenLedger = " 65040701 - Period Items", QtyServUnit= 128, QtyCount = 1, PurchUnit= "CS - Case ", CountUnit = "GL - Gallon", SellUnit= "OZ - Ounce ", CountFrequency = "P - Period", StandCost = 20.76},
 
                 }
+            
 
             };
 
+            itemList.TotalItems = itemList.Items.Count;
+
             return View(itemList);
+
+
 
 
         }
