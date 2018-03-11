@@ -5,7 +5,7 @@ using System.Web;
 
 namespace DepCalc.Models
 {
-    public class InvItemViewModel
+    public class ItemViewModel
     {
         public int? InvItemId { get; set; }
         public string InvItemName { get; set; }
