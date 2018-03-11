@@ -5,6 +5,8 @@ using System.Web;
 
 namespace DepCalc.Models
 {
+
+    //This view model represents a single item. 
     public class ItemViewModel
     {
         public int? InvItemId { get; set; }
