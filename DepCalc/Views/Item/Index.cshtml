@@ -1,9 +1,26 @@
 ﻿<!--This view will display the ItemListViewModel. Usually it would be named ItemList but it is named index it will be the default view under Item -->
 
-@Model  DepCalc.Models.ItemListViewModel
+@model DepCalc.Models.ItemListViewModel
+
 @{
     ViewBag.Title = "Inventory Items";
 }
 
-<h2>Index</h2>
+<h2>Inventory Items</h2>
 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>All Inventory Items</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (var i = 0; i < Model.Items.Count; i++)
+        {
+<tr>
+    <td>@Model.Items[i].ItemProdInfo</td>
+</tr>
+}
+    </tbody>
+</table>
+Total Items: @Model.TotalItems
