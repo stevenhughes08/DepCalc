@@ -17,9 +17,11 @@
     <tbody>
         @for (var i = 0; i < Model.Items.Count; i++)
         {
-<tr>
-    <td>@Model.Items[i].ItemProdInfo</td>
-</tr>
+        <tr>
+            <td>@Model.Items[i].ItemProdInfo</td>
+            <td>@Html.ActionLink("Detail", "ItemDetail", new { id = Model.Items[i].InvItemId })</td>
+
+        </tr>
 }
     </tbody>
 </table>
