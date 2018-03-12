@@ -112,7 +112,32 @@ namespace DepCalc.Controllers
                     return View("AddEditItem", itemViewModel);
 
                 }
+                
+                [HttpPost]
+                public ActionResult AddItem(ItemViewModel itemViewModel)
+                {
+                    //Add new Item with ItemId + 1
+                    var nextItemId = Items.Max(p => p.InvItemId) + 1;
+                    var item = new Item
+                    {
+                        InvItemId = nextItemId,
+                        InvItemName = itemViewModel.InvItemName,
 
+                        QtyServUnit = itemViewModel.QtyServUnit,
+                        CountUnit = itemViewModel.CountUnit,
+
+                        QtyCountUnit = itemViewModel.QtyCountUnit,
+                        SellUnit = itemViewModel.SellUnit,
+
+                        CountFrequency = itemViewModel.CountFrequency,
+                        StandCost = itemViewModel.StandCost,
+                        GenLedger = itemViewModel.GenLedger
+
+                    };
+                    Items.Add(item);
+                    return RedirectToAction("Index");
+
+                }
                 
 
     }
