@@ -1,0 +1,48 @@
+﻿@model DepCalc.Models.ItemViewModel
+@{
+    ViewBag.Title = "Add Item";
+}
+<h2>
+    @Model.ItemProdInfo</h2>
+    <div class="row">
+        <div class="col-sm-6 col-xs-10">
+            @using (Html.BeginForm("AddItem", "Item"))
+             {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.InvItemName)
+                    @Html.TextBoxFor(m => m.InvItemName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.QtyServUnit)
+                    @Html.TextBoxFor(m => m.QtyServUnit, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CountUnit)
+                    @Html.TextBoxFor(m => m.CountUnit, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.QtyCountUnit)
+                    @Html.TextBoxFor(m => m.QtyCountUnit, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.SellUnit)
+                    @Html.TextBoxFor(m => m.SellUnit, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CountFrequency)
+                    @Html.TextBoxFor(m => m.CountFrequency, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.StandCost)
+                    @Html.TextBoxFor(m => m.StandCost, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.GenLedger)
+                    @Html.TextBoxFor(m => m.GenLedger, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+                @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+             }
+        </div>
+    </div>
+
