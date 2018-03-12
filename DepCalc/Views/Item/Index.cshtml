@@ -17,12 +17,18 @@
     <tbody>
         @for (var i = 0; i < Model.Items.Count; i++)
         {
-        <tr>
-            <td>@Model.Items[i].ItemProdInfo</td>
-            <td>@Html.ActionLink("Detail", "ItemDetail", new { id = Model.Items[i].InvItemId })</td>
+            <tr>
+                <td>@Model.Items[i].ItemProdInfo</td>
+                <td>@Html.ActionLink("Detail", "ItemDetail", new { id = Model.Items[i].InvItemId })</td>
 
-        </tr>
-}
+            </tr>
+        }
     </tbody>
 </table>
-Total Items: @Model.TotalItems
+<div class="col-sm-12 form-group">
+    <label>Total Items:</label> @Model.TotalItems
+</div>
+<div class="col-sm-12">
+    @Html.ActionLink("Add Item", "ItemAdd", null, new { @class = "btn btn-primary" })
+</div>
+
