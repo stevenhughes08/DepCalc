@@ -10,15 +10,15 @@ namespace DepCalc.Models
     public class ItemViewModel
     {
         public int? InvItemId { get; set; }
-      //  [DisplayName("Item Name")]
+        [DisplayName("Item Name")]
         public string InvItemName { get; set; }
-       // [DisplayName("Gen #")]
+        [DisplayName("Gen #")]
         public string GenLedger { get; set; }
-       // [DisplayName("Amount Served")]
+        [DisplayName("Amount Served")]
         public double QtyServUnit { get; set; }
         public string QtyCountUnit { get; set; }
         public double QtyCount { get; set; }
-       // [DisplayName("Item is purchased by")]
+        [DisplayName("Item is purchased by")]
         public string PurchUnit { get; set; }
         public string CountUnit { get; set; }
         public string SellUnit { get; set; }

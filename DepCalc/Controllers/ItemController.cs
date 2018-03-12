@@ -105,6 +105,16 @@ namespace DepCalc.Controllers
 
                 }
 
+                public ActionResult ItemAdd()
+                {
+
+                    var itemViewModel = new ItemViewModel();
+                    return View("AddEditItem", itemViewModel);
+
+                }
+
+                
+
     }
 
 
