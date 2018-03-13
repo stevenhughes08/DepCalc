@@ -1,8 +1,11 @@
+using System;
+using System.Data.Entity;
+using System.Linq;
+
+
 namespace DepCalc
 {
-    using System;
-    using System.Data.Entity;
-    using System.Linq;
+    
 
     public class DepCalcContext : DbContext
     {
@@ -12,9 +15,9 @@ namespace DepCalc
         // 
         // If you wish to target a different database and/or database provider, modify the 'DepCalcContext' 
         // connection string in the application configuration file.
-        public DepCalcContext()
-            : base("name=DepCalcContext")
+        public DepCalcContext(): base("name=DepCalcContext")
         {
+            public virtual DbSet<Item> Items { get; set; }
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
