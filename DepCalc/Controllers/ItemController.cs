@@ -138,7 +138,63 @@ namespace DepCalc.Controllers
                     return RedirectToAction("Index");
 
                 }
-                
+
+                public ActionResult ItemEdit(int id)
+                {
+                    //When refractoring this is close to the code in the itemDetail action
+                    //This handles the AddEditItem function. 
+                    var item = Items.SingleOrDefault(p => p.InvItemId == id);
+                    if (item != null)
+                    {
+                        var itemViewModel = new ItemViewModel
+                        {
+                            InvItemId = item.InvItemId,
+                            InvItemName = item.InvItemName,
+
+                            QtyServUnit = item.QtyServUnit,
+                            CountUnit = item.CountUnit,
+
+                            QtyCountUnit = item.QtyCountUnit,
+                            SellUnit = item.SellUnit,
+
+                            CountFrequency = item.CountFrequency,
+                            StandCost = item.StandCost,
+                            GenLedger = item.GenLedger
+                        };
+                        return View("AddEditItem", itemViewModel);
+                    }
+                    return new HttpNotFoundResult();
+                }
+                //Handles retreving the new item. 
+                [HttpPost]
+                public ActionResult EditItem(ItemViewModel itemViewModel)
+                {
+                    var item = Items.SingleOrDefault(p => p.InvItemId == itemViewModel.InvItemId);
+                    if (item != null)
+                    {
+                 
+                        item.InvItemName = itemViewModel.InvItemName;
+
+                        item.QtyServUnit = itemViewModel.QtyServUnit;
+                        item.CountUnit = itemViewModel.CountUnit;
+
+                        item.QtyCountUnit = itemViewModel.QtyCountUnit;
+                        item.SellUnit = itemViewModel.SellUnit;
+
+                        item.CountFrequency = itemViewModel.CountFrequency;
+                        item.StandCost = itemViewModel.StandCost;
+                        item.GenLedger = itemViewModel.GenLedger;
+                        
+                        return RedirectToAction("Index");
+                    }
+                    return new HttpNotFoundResult();
+                }
+
+
+
+
+
+
 
     }
 
