@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,7 @@ namespace DepCalc.Models
 {
     public class Item
     {
+        [Key]
         public int InvItemId { get; set; }
         public string InvItemName { get; set; }
         public string GenLedger { get; set; }
