@@ -10,6 +10,8 @@ namespace DepCalc
     public class Global : System.Web.HttpApplication
     {
 
+        //Corrected RouteConfig in this file. 
+
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteConfig.RegisterRoutes(System.Web.Routing.RouteTable.Routes);
