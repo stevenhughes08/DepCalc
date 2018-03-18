@@ -13,14 +13,23 @@ namespace DepCalc.Models
     {
         [Key]
         public int InvItemId { get; set; }
+        [Required]
         public string InvItemName { get; set; }
+        [Required]
         public string GenLedger { get; set; }
+        [Required]
         public double QtyServUnit { get; set; }
+        [Required]
         public string QtyCountUnit { get; set; }
+        [Required]
         public double QtyCount { get; set; }
+        [Required]
         public string PurchUnit { get; set; }
+        [Required]
         public string CountUnit { get; set; }
+        [Required]
         public string SellUnit { get; set; }
+        [Required]
         public string CountFrequency { get; set; }
         public double StandCost { get; set; }
     }
