@@ -11,16 +11,14 @@ namespace DepCalc.Models
 {
     public class Item
     {
-        [Key]
-        public int InvItemId { get; set; }
+        
+        public int ItemId { get; set; }
         [Required]
-        public string InvItemName { get; set; }
+        public string ItemName { get; set; }
         [Required]
         public string GenLedger { get; set; }
         [Required]
         public double QtyServUnit { get; set; }
-        [Required]
-        public string QtyCountUnit { get; set; }
         [Required]
         public double QtyCount { get; set; }
         [Required]

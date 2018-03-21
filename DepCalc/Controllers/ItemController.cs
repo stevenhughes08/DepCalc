@@ -22,13 +22,13 @@ namespace DepCalc.Controllers
                     Items = DepCalcContext.Items.Select(p => new ItemViewModel
                     {
                         //Items are sorted by how they should appear for Steve's sanity.
-                        InvItemId = p.InvItemId,
-                        InvItemName = p.InvItemName,
+                        ItemId = p.ItemId,
+                        ItemName = p.ItemName,
 
                         QtyServUnit = p.QtyServUnit,
                         CountUnit = p.CountUnit,
 
-                        QtyCountUnit = p.QtyCountUnit,
+                        //QtyCountUnit = p.QtyCountUnit,
                         SellUnit = p.SellUnit,
 
                         CountFrequency = p.CountFrequency,
@@ -51,20 +51,20 @@ namespace DepCalc.Controllers
             using (var DepCalcContext = new DepCalcContext())
             {
 
-                var item = DepCalcContext.Items.SingleOrDefault(p => p.InvItemId == id);
+                var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == id);
                 if (item != null)
                 {
 
                     var itemViewModel = new ItemViewModel
                     {
 
-                        InvItemId = item.InvItemId,
-                        InvItemName = item.InvItemName,
+                        ItemId = item.ItemId,
+                        ItemName = item.ItemName,
 
                         QtyServUnit = item.QtyServUnit,
                         CountUnit = item.CountUnit,
 
-                        QtyCountUnit = item.QtyCountUnit,
+                        //QtyCountUnit = item.QtyCountUnit,
                         SellUnit = item.SellUnit,
 
                         CountFrequency = item.CountFrequency,
@@ -99,13 +99,13 @@ namespace DepCalc.Controllers
             {
                 var item = new Item
                 {
-                    //InvItemId = nextItemId,
-                    InvItemName = itemViewModel.InvItemName,
+                    //ItemId = nextItemId,
+                    ItemName = itemViewModel.ItemName,
 
                     QtyServUnit = itemViewModel.QtyServUnit,
                     CountUnit = itemViewModel.CountUnit,
 
-                    QtyCountUnit = itemViewModel.QtyCountUnit,
+                    //QtyCountUnit = itemViewModel.QtyCountUnit,
                     SellUnit = itemViewModel.SellUnit,
 
                     CountFrequency = itemViewModel.CountFrequency,
@@ -127,18 +127,18 @@ namespace DepCalc.Controllers
             //This handles the AddEditItem function. 
             using (var DepCalcContext = new DepCalcContext())
             {
-                var item = DepCalcContext.Items.SingleOrDefault(p => p.InvItemId == id);
+                var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == id);
                 if (item != null)
                 {
                     var itemViewModel = new ItemViewModel
                     {
-                        InvItemId = item.InvItemId,
-                        InvItemName = item.InvItemName,
+                        ItemId = item.ItemId,
+                        ItemName = item.ItemName,
 
                         QtyServUnit = item.QtyServUnit,
                         CountUnit = item.CountUnit,
 
-                        QtyCountUnit = item.QtyCountUnit,
+                        //QtyCountUnit = item.QtyCountUnit,
                         SellUnit = item.SellUnit,
 
                         CountFrequency = item.CountFrequency,
@@ -156,7 +156,7 @@ namespace DepCalc.Controllers
         {
 
             using (var DepCalcContext = new DepCalcContext())
-            { var item = DepCalcContext.Items.SingleOrDefault(p => p.InvItemId == itemViewModel.InvItemId);
+            { var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == itemViewModel.ItemId);
                 if (item != null)
                 {
                     DepCalcContext.Items.Remove(item);
@@ -174,7 +174,7 @@ namespace DepCalc.Controllers
         {
             using (var DepCalcContext = new DepCalcContext())
             {
-                var item = DepCalcContext.Items.SingleOrDefault(p => p.InvItemId == itemViewModel.InvItemId);
+                var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == itemViewModel.ItemId);
                     if(item != null)
                     {
                     DepCalcContext.Items.Remove(item);
