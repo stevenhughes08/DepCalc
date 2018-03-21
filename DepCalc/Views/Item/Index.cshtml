@@ -20,15 +20,15 @@
             <tr>
                 <td>@Model.Items[i].ItemProdInfo</td>
                 <td>
-                    @Html.ActionLink("Detail", "ItemDetail", new { id = Model.Items[i].InvItemId })
-                    | @Html.ActionLink("Edit", "ItemEdit", new { id = Model.Items[i].InvItemId })
+                    @Html.ActionLink("Detail", "ItemDetail", new { id = Model.Items[i].ItemId })
+                    | @Html.ActionLink("Edit", "ItemEdit", new { id = Model.Items[i].ItemId })
                     | <a data-toggle="modal" href="@("#deleteItemModal" + i)">Delete</a>
                     <div class="modal fade" id="@("deleteItemModal" + i)" tabindex="-1" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 @using (Html.BeginForm("DeleteItem", "Item"))
                                 {
-                <input type="hidden" value="@Model.Items[i].InvItemId" name="InvItemId" />
+                <input type="hidden" value="@Model.Items[i].ItemId" name="ItemId" />
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Delete @Model.Items[i].ItemProdInfo</h4>
