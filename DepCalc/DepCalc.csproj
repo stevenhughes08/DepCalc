@@ -99,6 +99,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Content1\CSS\Custom.css" />
+    <Content Include="Content1\JS\Formula.js" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -126,9 +127,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803211536556_Initial.cs" />
-    <Compile Include="Migrations\201803211536556_Initial.Designer.cs">
-      <DependentUpon>201803211536556_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201803212214059_initialmigration.cs" />
+    <Compile Include="Migrations\201803212214059_initialmigration.Designer.cs">
+      <DependentUpon>201803212214059_initialmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Item.cs" />
@@ -137,8 +138,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803211536556_Initial.resx">
-      <DependentUpon>201803211536556_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803212214059_initialmigration.resx">
+      <DependentUpon>201803212214059_initialmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
