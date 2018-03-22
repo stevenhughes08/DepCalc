@@ -60,16 +60,13 @@ namespace DepCalc.Controllers
 
                         ItemId = item.ItemId,
                         ItemName = item.ItemName,
-
+                        GenLedger = item.GenLedger,
                         QtyServUnit = item.QtyServUnit,
                         CountUnit = item.CountUnit,
-
-                        //QtyCountUnit = item.QtyCountUnit,
                         SellUnit = item.SellUnit,
-
                         CountFrequency = item.CountFrequency,
                         StandCost = item.StandCost,
-                        GenLedger = item.GenLedger
+                       
 
                     };
 
@@ -101,16 +98,13 @@ namespace DepCalc.Controllers
                 {
                     //ItemId = nextItemId,
                     ItemName = itemViewModel.ItemName,
-
+                    GenLedger = itemViewModel.GenLedger,
                     QtyServUnit = itemViewModel.QtyServUnit,
                     CountUnit = itemViewModel.CountUnit,
-
-                    //QtyCountUnit = itemViewModel.QtyCountUnit,
                     SellUnit = itemViewModel.SellUnit,
-
                     CountFrequency = itemViewModel.CountFrequency,
                     StandCost = itemViewModel.StandCost,
-                    GenLedger = itemViewModel.GenLedger
+                    
                 };
                 DepCalcContext.Items.Add(item);
                 DepCalcContext.SaveChanges();
@@ -134,16 +128,13 @@ namespace DepCalc.Controllers
                     {
                         ItemId = item.ItemId,
                         ItemName = item.ItemName,
-
+                        GenLedger = item.GenLedger,
                         QtyServUnit = item.QtyServUnit,
                         CountUnit = item.CountUnit,
-
-                        //QtyCountUnit = item.QtyCountUnit,
                         SellUnit = item.SellUnit,
-
                         CountFrequency = item.CountFrequency,
-                        StandCost = item.StandCost,
-                        GenLedger = item.GenLedger
+                        StandCost = item.StandCost
+                       
                     };
                     return View("AddEditItem", itemViewModel);
                 }
@@ -159,15 +150,24 @@ namespace DepCalc.Controllers
             { var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == itemViewModel.ItemId);
                 if (item != null)
                 {
-                    DepCalcContext.Items.Remove(item);
-                    DepCalcContext.SaveChanges();
+                    item.ItemName = ItemViewModel.ItemName;
+                    item.GenLedger = ItemViewModel.GenLedger;
+                    item.QtyServUnit = ItemViewModel.QtyServUnit;
+                    item.CountUnit = ItemViewModel.CountUnit;
+                    item.SellUnit = ItemViewModel.SellUnit;
+                    item.CountFrequency = ItemViewModel.CountFrequency;
+                    item.StandCost = ItemViewModel.StandCost;
+
                     return RedirectToAction("Index");
                 }
+
+                return new HttpNotFoundResult();
             }
 
-            return new HttpNotFoundResult();
+            
         }
                 
+
 
         [HttpPost]
         public ActionResult DeleteItem(ItemViewModel itemViewModel)
