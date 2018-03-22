@@ -10,15 +10,15 @@ namespace DepCalc.Models
     //This view model represents a single item. 
     public class ItemViewModel
     {
-        public int? ItemId { get; set; }
-        [DisplayName("Item Name")]
+        public int ItemId { get; set; }
+        //[DisplayName("Item Name")]
         public string ItemName { get; set; }
-        [DisplayName("Gen #")]
+       // [DisplayName("Gen #")]
         public string GenLedger { get; set; }
-        [DisplayName("Amount Served")]
+        //[DisplayName("Amount Served")]
         public double QtyServUnit { get; set; }
-        public double QtyCount { get; set; }
-        [DisplayName("Item is purchased by")]
+        //public double QtyCount { get; set; }
+       // [DisplayName("Item is purchased by")]
         public string PurchUnit { get; set; }
         public string CountUnit { get; set; }
         public string SellUnit { get; set; }

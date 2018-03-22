@@ -17,6 +17,8 @@ function UsageCalc()
 
 }
 
+
+
 function noIssue(bool) {
     if (InvBool === false){
         return "No depletion issue found.";

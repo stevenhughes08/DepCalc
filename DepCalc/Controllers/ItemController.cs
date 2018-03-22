@@ -24,16 +24,13 @@ namespace DepCalc.Controllers
                         //Items are sorted by how they should appear for Steve's sanity.
                         ItemId = p.ItemId,
                         ItemName = p.ItemName,
-
+                        GenLedger = p.GenLedger,
                         QtyServUnit = p.QtyServUnit,
                         CountUnit = p.CountUnit,
-
-                        //QtyCountUnit = p.QtyCountUnit,
                         SellUnit = p.SellUnit,
-
                         CountFrequency = p.CountFrequency,
-                        StandCost = p.StandCost,
-                        GenLedger = p.GenLedger
+                        StandCost = p.StandCost
+                       
 
                     }).ToList()
                 };
@@ -138,18 +135,24 @@ namespace DepCalc.Controllers
                     };
                     return View("AddEditItem", itemViewModel);
                 }
-                return new HttpNotFoundResult();
+               
             }
+
+            return new HttpNotFoundResult();
         }
-        //Handles retreving the new item. 
+       
+        
         [HttpPost]
         public ActionResult EditItem(ItemViewModel itemViewModel)
         {
 
-            using (var DepCalcContext = new DepCalcContext())
-            { var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == itemViewModel.ItemId);
+            using (var depCalcContext = new DepCalcContext())
+            {
+
+                var item = depCalcContext.Items.SingleOrDefault(p => p.ItemId == itemViewModel.ItemId);
                 if (item != null)
                 {
+                    
                     item.ItemName = ItemViewModel.ItemName;
                     item.GenLedger = ItemViewModel.GenLedger;
                     item.QtyServUnit = ItemViewModel.QtyServUnit;
@@ -158,13 +161,15 @@ namespace DepCalc.Controllers
                     item.CountFrequency = ItemViewModel.CountFrequency;
                     item.StandCost = ItemViewModel.StandCost;
 
+                    DepCalcContext.SaveChanges();
+
                     return RedirectToAction("Index");
                 }
 
-                return new HttpNotFoundResult();
             }
 
-            
+            return new HttpNotFoundResult();
+
         }
                 
 
