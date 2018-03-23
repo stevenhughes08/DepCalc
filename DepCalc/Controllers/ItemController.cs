@@ -153,15 +153,15 @@ namespace DepCalc.Controllers
                 if (item != null)
                 {
                     
-                    item.ItemName = ItemViewModel.ItemName;
-                    item.GenLedger = ItemViewModel.GenLedger;
-                    item.QtyServUnit = ItemViewModel.QtyServUnit;
-                    item.CountUnit = ItemViewModel.CountUnit;
-                    item.SellUnit = ItemViewModel.SellUnit;
-                    item.CountFrequency = ItemViewModel.CountFrequency;
-                    item.StandCost = ItemViewModel.StandCost;
+                    item.ItemName = itemViewModel.ItemName;
+                    item.GenLedger = itemViewModel.GenLedger;
+                    item.QtyServUnit = itemViewModel.QtyServUnit;
+                    item.CountUnit = itemViewModel.CountUnit;
+                    item.SellUnit = itemViewModel.SellUnit;
+                    item.CountFrequency = itemViewModel.CountFrequency;
+                    item.StandCost = itemViewModel.StandCost;
 
-                    DepCalcContext.SaveChanges();
+                    depCalcContext.SaveChanges();
 
                     return RedirectToAction("Index");
                 }
