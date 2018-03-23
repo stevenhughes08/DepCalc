@@ -15,7 +15,7 @@ namespace DepCalc.Models
         public int ItemId { get; set; }
         [Required]
         public string ItemName { get; set; }
-        [Required, StringLength(8)]
+        [Required]
         public string GenLedger { get; set; }
         [Required]
         public double QtyServUnit { get; set; }

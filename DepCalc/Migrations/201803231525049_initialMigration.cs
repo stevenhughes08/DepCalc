@@ -3,7 +3,7 @@ namespace DepCalc.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class initialMigration : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace DepCalc.Migrations
                         ItemName = c.String(nullable: false),
                         GenLedger = c.String(nullable: false, maxLength: 8),
                         QtyServUnit = c.Double(nullable: false),
+                        QtyCount = c.Double(nullable: false),
                         PurchUnit = c.String(nullable: false),
                         CountUnit = c.String(nullable: false),
                         SellUnit = c.String(nullable: false),

@@ -3,16 +3,16 @@ namespace DepCalc.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedQtyCount : DbMigration
+    public partial class third : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Items", "QtyCount", c => c.Double(nullable: false));
+            AlterColumn("dbo.Items", "GenLedger", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Items", "QtyCount", c => c.Int(nullable: false));
+            AlterColumn("dbo.Items", "GenLedger", c => c.String(nullable: false, maxLength: 8));
         }
     }
 }

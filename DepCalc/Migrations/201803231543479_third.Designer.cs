@@ -7,13 +7,13 @@ namespace DepCalc.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class third : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(third));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803231422345_initial"; }
+            get { return "201803231543479_third"; }
         }
         
         string IMigrationMetadata.Source

@@ -127,13 +127,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803231422345_initial.cs" />
-    <Compile Include="Migrations\201803231422345_initial.Designer.cs">
-      <DependentUpon>201803231422345_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201803231525049_initialMigration.cs" />
+    <Compile Include="Migrations\201803231525049_initialMigration.Designer.cs">
+      <DependentUpon>201803231525049_initialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803231516317_AddedQtyCount.cs" />
-    <Compile Include="Migrations\201803231516317_AddedQtyCount.Designer.cs">
-      <DependentUpon>201803231516317_AddedQtyCount.cs</DependentUpon>
+    <Compile Include="Migrations\201803231538379_initialMigration1.cs" />
+    <Compile Include="Migrations\201803231538379_initialMigration1.Designer.cs">
+      <DependentUpon>201803231538379_initialMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803231543479_third.cs" />
+    <Compile Include="Migrations\201803231543479_third.Designer.cs">
+      <DependentUpon>201803231543479_third.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Item.cs" />
@@ -145,11 +149,14 @@
     <Folder Include="Views\Dropdown\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803231422345_initial.resx">
-      <DependentUpon>201803231422345_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803231525049_initialMigration.resx">
+      <DependentUpon>201803231525049_initialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803231516317_AddedQtyCount.resx">
-      <DependentUpon>201803231516317_AddedQtyCount.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803231538379_initialMigration1.resx">
+      <DependentUpon>201803231538379_initialMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803231543479_third.resx">
+      <DependentUpon>201803231543479_third.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
