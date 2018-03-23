@@ -17,7 +17,7 @@ namespace DepCalc.Models
         public string GenLedger { get; set; }
         //[DisplayName("Amount Served")]
         public double QtyServUnit { get; set; }
-        //public double QtyCount { get; set; }
+        public double QtyCount { get; set; }
        // [DisplayName("Item is purchased by")]
         public string PurchUnit { get; set; }
         public string CountUnit { get; set; }

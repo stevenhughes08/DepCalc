@@ -13,7 +13,7 @@ namespace DepCalc.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DepCalcContext context)
+        protected override void Seed(DepCalc.DepCalcContext context)
         {
             context.Items.AddOrUpdate(
                     p => p.ItemId,

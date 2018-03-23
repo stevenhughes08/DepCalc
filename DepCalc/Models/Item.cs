@@ -15,7 +15,7 @@ namespace DepCalc.Models
         public int ItemId { get; set; }
         [Required]
         public string ItemName { get; set; }
-        [Required]
+        [Required, StringLength(8)]
         public string GenLedger { get; set; }
         [Required]
         public double QtyServUnit { get; set; }
@@ -29,6 +29,7 @@ namespace DepCalc.Models
         public string SellUnit { get; set; }
         [Required]
         public string CountFrequency { get; set; }
+        [Required]
         public double StandCost { get; set; }
     }
 }

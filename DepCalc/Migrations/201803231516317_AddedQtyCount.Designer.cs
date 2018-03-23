@@ -7,13 +7,13 @@ namespace DepCalc.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initialmigration : IMigrationMetadata
+    public sealed partial class AddedQtyCount : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedQtyCount));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803212214059_initialmigration"; }
+            get { return "201803231516317_AddedQtyCount"; }
         }
         
         string IMigrationMetadata.Source

@@ -13,6 +13,14 @@
         <br />@Html.DisplayFor(m => m.QtyServUnit)
     </div>
     <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.QtyCount)
+        <br />@Html.DisplayFor(m => m.QtyCount)
+    </div>
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.PurchUnit)
+        <br />@Html.DisplayFor(m => m.PurchUnit)
+    </div>
+    <div class="col-sm-12 form-group">
         @Html.LabelFor(m => m.CountUnit)
         <br />@Html.DisplayFor(m => m.CountUnit)
     </div>
@@ -36,6 +44,9 @@
         @Html.ActionLink("Done", "Index", null, new { @class = "btn btn-primary" })
     </div>
 </div>
+
+
+
 
 
 
