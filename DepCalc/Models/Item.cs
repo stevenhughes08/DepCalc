@@ -12,7 +12,7 @@ namespace DepCalc.Models
     public class Item
     {
         [Key]
-        public int ItemId { get; set; }
+        public int? ItemId { get; set; }
         [Required]
         public string ItemName { get; set; }
         [Required]

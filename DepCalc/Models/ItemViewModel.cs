@@ -10,7 +10,7 @@ namespace DepCalc.Models
     //This view model represents a single item. 
     public class ItemViewModel
     {
-        public int ItemId { get; set; }
+        public int? ItemId { get; set; }
         //[DisplayName("Item Name")]
         public string ItemName { get; set; }
        // [DisplayName("Gen #")]

@@ -13,7 +13,7 @@ namespace DepCalc.Migrations
                     {
                         ItemId = c.Int(nullable: false, identity: true),
                         ItemName = c.String(nullable: false),
-                        GenLedger = c.String(nullable: false, maxLength: 8),
+                        GenLedger = c.String(nullable: false),
                         QtyServUnit = c.Double(nullable: false),
                         QtyCount = c.Double(nullable: false),
                         PurchUnit = c.String(nullable: false),

@@ -1,6 +1,5 @@
 ﻿@model DepCalc.Models.ItemViewModel
-@{
-    var isEditMode = Model.ItemId != null;
+@{ var isEditMode = Model.ItemId != null;
     ViewBag.Title = isEditMode ? "Edit " + Model.ItemProdInfo : "Add Item";
 
 }
