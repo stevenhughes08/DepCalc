@@ -171,7 +171,9 @@ namespace DepCalc.Controllers
                     item.SellUnit = itemViewModel.SellUnit;
                     item.CountFrequency = itemViewModel.CountFrequency;
                     item.StandCost = itemViewModel.StandCost;
+
                     depCalcContext.SaveChanges();
+
 
                     return RedirectToAction("Index");
                 }
