@@ -123,9 +123,9 @@ namespace DepCalc.Controllers
         {
             //When refractoring this is close to the code in the itemDetail action
             //This handles the AddEditItem function. 
-            using (var DepCalcContext = new DepCalcContext())
+            using (var depCalcContext = new DepCalcContext())
             {
-                var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == id);
+                var item = depCalcContext.Items.SingleOrDefault(p => p.ItemId == id);
                 if (item != null)
                 {
                     var itemViewModel = new ItemViewModel
@@ -171,12 +171,11 @@ namespace DepCalc.Controllers
                     item.SellUnit = itemViewModel.SellUnit;
                     item.CountFrequency = itemViewModel.CountFrequency;
                     item.StandCost = itemViewModel.StandCost;
-
                     depCalcContext.SaveChanges();
 
                     return RedirectToAction("Index");
                 }
-
+                
             }
 
             return new HttpNotFoundResult();
@@ -188,13 +187,13 @@ namespace DepCalc.Controllers
         [HttpPost]
         public ActionResult DeleteItem(ItemViewModel itemViewModel)
         {
-            using (var DepCalcContext = new DepCalcContext())
+            using (var depCalcContext = new DepCalcContext())
             {
-                var item = DepCalcContext.Items.SingleOrDefault(p => p.ItemId == itemViewModel.ItemId);
+                var item = depCalcContext.Items.SingleOrDefault(p => p.ItemId == itemViewModel.ItemId);
                     if(item != null)
                     {
-                    DepCalcContext.Items.Remove(item);
-                    DepCalcContext.SaveChanges();
+                    depCalcContext.Items.Remove(item);
+                    depCalcContext.SaveChanges();
                     return RedirectToAction("Index");
                     }
 

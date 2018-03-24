@@ -3,7 +3,7 @@ namespace DepCalc.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class third : DbMigration
+    public partial class Third : DbMigration
     {
         public override void Up()
         {
