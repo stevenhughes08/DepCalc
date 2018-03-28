@@ -8,9 +8,21 @@ using DepCalc.Models;
 
 namespace DepCalc.Controllers
 {
+
     public class ItemController : Controller
     {
-        
+        [HttpPost]
+        public ActionResult Search(ItemSearchViewModel model)
+        {
+            using (var context = new DepCalcContext())
+            {
+                var results = context.Items.Where(p => p.ItemName.Contains(model.ItemName))
+                    .OrderBy(x => x.ItemId).ThenBy(x => x.ItemName).Skip(model.ItemsPerPage * model.PageNumber).Take(model.ItemsPerPage)
+                    .ToList();
+
+                return Json(results);
+            }
+        }
 
         public ActionResult Index()
         {
