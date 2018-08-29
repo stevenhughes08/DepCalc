@@ -8,6 +8,8 @@ namespace DepCalc.Models
 {
     public class ItemSearchViewModel
     {
+
+        //All items to use in search function. 
        [Required]
         public string ItemName { get; set; }
         public int PageNumber { get; set; }
